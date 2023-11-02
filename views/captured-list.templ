@@ -1,0 +1,15 @@
+package view
+
+templ CapturedList(arr []string) {
+	<div id="results">
+		<ul>
+			for _, str := range arr {
+				<li>
+					<mark>
+						{ str }
+					</mark>
+				</li>
+			}
+		</ul>
+	</div>
+}
