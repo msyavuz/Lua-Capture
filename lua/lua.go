@@ -8,7 +8,7 @@ func Match(testString string, pattern string) []string {
 	L := l.NewState()
 	defer L.Close()
 
-	if err := L.DoFile("lua/test.lua"); err != nil {
+	if err := L.DoFile("lua/match.lua"); err != nil {
 		return []string{}
 	}
 	if err := L.CallByParam(l.P{
