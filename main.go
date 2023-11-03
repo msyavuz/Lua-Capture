@@ -7,8 +7,6 @@ import (
 
 	"github.com/a-h/templ"
 
-	// TODO: I need name these better
-	l "github.com/yuin/gopher-lua"
 	lua "msyavuz/peth/lua"
 )
 
@@ -27,12 +25,8 @@ func main() {
 			pattern := r.FormValue("pattern")
 			testString := r.FormValue("test")
 
-			// Put the results in an array
-			strArr := []string{}
-			lTable := lua.Match(testString, pattern)
-			lTable.ForEach(func(l1, l2 l.LValue) {
-				strArr = append(strArr, l2.String())
-			})
+			strArr := lua.Match(testString, pattern)
+
 			if len(strArr) == 0 {
 				listComponent := view.Error()
 				listComponent.Render(r.Context(), w)
