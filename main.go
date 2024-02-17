@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"msyavuz/peth/views"
 	"net/http"
 
 	"github.com/a-h/templ"
 
 	lua "msyavuz/peth/lua"
+	view "msyavuz/peth/views"
 )
 
 func main() {
@@ -16,7 +16,6 @@ func main() {
 	http.Handle("/", templ.Handler(index))
 
 	http.HandleFunc("/lua", func(w http.ResponseWriter, r *http.Request) {
-
 		switch r.Method {
 		case "POST":
 			r.ParseForm()

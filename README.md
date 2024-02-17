@@ -19,3 +19,6 @@ As minimal as it can be:
 - Frontend with [htmx](https://htmx.org/)
 - Backend with Go and templating with [templ](https://github.com/a-h/templ)
 - Styling with [picocss](https://picocss.com/)
+
+> [!NOTE]
+> It takes a while for Render to start the app for the first time each day. After that load is much faster.

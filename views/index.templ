@@ -1,22 +1,27 @@
 package view
 
 templ Index() {
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"/>
-		<script src="https://unpkg.com/htmx.org@1.9.6"></script>
-	</head>
-	<body>
-		<main class="container">
-			<form hx-post="/lua" hx-target="#results">
-				<label for="pattern">Capture Pattern</label>
-				<input type="text" id="pattern" name="pattern" placeholder="(.+)" required/>
-				<label for="test">Test String</label>
-				<input type="text" id="test" name="test" required/>
-				<button type="submit">Submit</button>
-			</form>
-			<div id="results" readonly></div>
-		</main>
-	</body>
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<meta name="description" content="Test lua captures online"/>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+			<script src="https://unpkg.com/htmx.org@1.9.6"></script>
+			<title>Lua Capture</title>
+		</head>
+		<body>
+			<main class="container">
+				<form hx-post="/lua" hx-target="#results">
+					<label for="pattern">Capture Pattern</label>
+					<input type="text" id="pattern" name="pattern" placeholder="(.+)" required/>
+					<label for="test">Test String</label>
+					<input type="text" id="test" name="test" required/>
+					<button type="submit">Submit</button>
+				</form>
+				<div id="results" readonly></div>
+			</main>
+		</body>
+	</html>
 }
